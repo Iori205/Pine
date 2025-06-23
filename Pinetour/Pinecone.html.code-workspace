@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Pinecone.html"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Pinetour"
+	}
+}

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .red {
+            width: 100px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 1);
+            text-decoration: none;
+            font-family: inter;
+
+        }
+
+        .cont {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            padding: 65px 0;
+            margin: 0 auto;
+            width: 1440px;
+
+        }
+
+        .menu {
+            width: 275.5px;
+            height: 370px;
+            border-radius: 24px;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 8px 8px 0 rgba(41, 114, 139, 0.25),
+                -8px -8px 0 rgba(31, 114, 170, 0.46);
+            position: relative;
+            background-size: cover;
+        }
+
+        .black {
+            font-size: 37px;
+            font-weight: 400;
+            color: rgba(253, 253, 254, 0.8);
+            text-align: center;
+            font-family: Bebas Neue;
+            text-shadow: 0 4px 4.9px rgba(0, 0, 0, 0.65);
+            position: relative;
+            z-index: 10;
+
+        }
+
+        .blue {
+            background-color: rgba(41, 41, 41, 0.4);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.9s;
+        }
+
+        .menu:hover .blue {
+            opacity: 1;
+        }
+
+        .menu:hover .black {
+            color: white;
+        }
+
+        .orange {
+            width: 513px;
+            height: 112px;
+            border-radius: 124px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 32px;
+            padding-right: 32px;
+            margin-bottom: 20px;
+            border: 4px solid transparent;
+
+        }
+
+        .beige {
+            font-size: 24px;
+            font-weight: 500;
+            color: rgba(9, 9, 11, 1);
+            font-family: inter;
+        }
+
+        .yellow {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(24, 24, 27, 1);
+            font-family: Montserrat;
+            display: flex;
+            gap: 12px;
+
+        }
+
+        .ocean {
+            width: 52px;
+            height: 52px;
+            background-color: rgba(247, 246, 243, 1);
+            border-radius: 26px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brown {
+            display: none;
+            position: absolute;
+        }
+
+        .orange:hover .brown {
+            display: block;
+        }
+
+        .orange:hover {
+            border: 4px solid rgba(255, 255, 255, 1)
+        }
+
+        .green {
+            background-color: rgba(250, 251, 252, 1);
+            width: 384px;
+            height: 527px;
+            border-radius: 40px;
+        }
+
+        .green:hover {
+            box-shadow: 8px 8px rgba(41, 114, 139, 0.25), -8px -8px rgba(46, 65, 71, 0.4);
+            transition-duration: 300ms;
+
+        }
+
+        .gold {
+            display: flex;
+            gap: 24px;
+            padding-top: 32px;
+            padding-left: 24px;
+            align-items: center;
+        }
+
+        .silver {
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inter;
+            color: rgba(63, 65, 69, 1);
+            padding-bottom: 16px;
+            display: flex;
+            align-items: center;
+            padding-left: 24px;
+            gap: 20px;
+        }
+
+        .metal {
+            background-color: rgba(164, 209, 226, 1);
+            width: 336px;
+            height: 48px;
+            border-radius: 24px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 21px;
+        }
+
+        .metal:hover {
+            background-color: rgba(24, 24, 27, 0.9);
+            color: rgba(250, 250, 250, 1);
+        }
+
+        .box {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inter;
+        }
+
+        .green:hover .metal {
+            background-color: rgba(24, 24, 27, 0.9);
+            color: rgba(250, 250, 250, 1);
+        }
+
+        .mont {
+            font-size: 18px;
+            font-weight: 700;
+            font-family: Montserrat;
+            color: rgba(105, 114, 181, 1);
+            background-color: rgba(250, 251, 252, 1);
+            width: 167px;
+            height: 44px;
+            border-radius: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .heart:hover {
+            color: rgba(41, 114, 139, 0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;">
+    <!-- start -->
+    <main
+        style="background-image: url('Ima/1.png'); width: 1440px;margin: 0 auto; height: 773px; background-repeat: no-repeat; background-size: cover;">
+
+        <nav style="padding-top: 30px;">
+            <div
+                style="display: flex; justify-content: space-between;;padding: 0 118px;height: 35px;align-items: center;">
+                <img style="width: 101px;" src="Ima/logo 1.png">
+                <div style="width: 392px;display: flex;gap: 24px;">
+                    <a class="red" href="#">Home</a>
+                    <a class="red" href="#">About</a>
+                    <a class="red" href="#">Contact</a>
+                    <img style="width: 20px;height: 20px;" src="Ima/user.png">
+                </div>
+                <button style="width:40px;height:40px;
+                background-color: rgba(255, 255, 255, 1);
+                border-radius: 24px;
+                border-color: transparent;gap: 10px;">EN</button>
+            </div>
+        </nav>
+        <section style="text-align: center;padding-top: 95.5px;">
+            <div style="font-size: 80px;color: rgba(232, 237, 242, 0.72);">Pure magic</div>
+            <div style="font-size: 250px;color: rgba(253, 253, 254, 1);font-family: Bebas Neue;">AWAITS!</div>
+            <div style="font-size: 64px;color: rgba(255, 255, 255, 0.8);font-family: Hanuman;font-weight: 900;">2024
+            </div>
+        </section>
+    </main>
+    <!-- 2 -->
+    <section class="cont" style="background-image: url('Ima/Location\ image.png');">
+        <div class="menu" style="background-image: url('Ima/l1.png');">
+            <div style="width: 232px;" class="black">TERKHIIN TSAGAAN LAKE</div>
+            <div class="blue"></div>
+        </div>
+        <div class="menu" style="background-image: url('Ima/l2.png');">
+            <div class="black">AMARBAYASGALANT MONASTYRE</div>
+            <div class="blue"></div>
+        </div>
+        <div class="menu" style="background-image: url('Ima/l3.png');">
+            <div class="black">KHUVSGUL LAKE</div>
+            <div class="blue"></div>
+        </div>
+        <div class="menu" style=" background-image: url('Ima/l4.png');">
+            <div class="black">KHORGIIN TOGOO</div>
+            <div class="blue"></div>
+        </div>
+    </section>
+    <!-- lacotian -->
+    <section
+        style="background-image: url('Ima/b1.png');width: 1440px;margin: 0 auto;height: 1022px;background-size: cover;position: relative">
+
+        <div style="text-align: center;padding-top: 120px;">
+            <div
+                style="font-size: 42px;font-weight: 600;font-family: inter;color: rgba(0, 0, 0, 1);padding-bottom: 10px;">
+                Destination of Our
+                Agency</div>
+            <div style="font-size: 20px;font-weight: 500;font-family: inter;color: rgba(24, 24, 27, 0.7);">Pack your
+                bags and get ready</div>
+        </div>
+        <div style="padding-top: 59px;margin-left: 120px;">
+            <div class="orange" style="background-color: rgba(238, 233, 217, 1);">
+                <div>
+                    <div class="beige">Sukhbaatar
+                        square</div>
+
+                    <div class="yellow"><img style="width: 14px;height: 14px;" src="Ima/loca.png">
+                        Ulaanbaatar
+                    </div>
+                </div>
+                <div class="ocean">DAY 1</div>
+                <div class="brown" style="top: 329px;right: 142.24px;">
+                    <img style="width: 245.34px;height: 245px;" src="Ima/sukh.png">
+                </div>
+            </div>
+            <div class="none" style="position: absolute;top: 435px;left: 1175px;">
+                <img style="height: 34px;height: 34px;" src="Ima/MapPin 1.png">
+            </div>
+            <div class="orange" style="background-color: rgba(139, 184, 193, 0.8);">
+                <div>
+                    <div class="beige">Amarbaysgalant monastery</div>
+                    <div class="yellow"><img style="width: 14px;height: 14px;" src="Ima/loca.png">Bulgan</div>
+                </div>
+                <div class="ocean">DAY 2</div>
+                <div class="brown" style="top: 218px;left: 837px;"><img style="width: 245.35px;height: 245px;"
+                        src="Ima/amar.png"></div>
+            </div>
+            <div style="position: absolute;top: 299px;left: 943px;">
+                <img style="width: 34px;height: 34px;" src="Ima/MapPin 1.png">
+            </div>
+            <div class="orange" style="background-color: rgba(170, 216, 215, 0.8);">
+                <div>
+                    <div class="beige">Khorgiin togoo</div>
+                    <div class="yellow"><img style="width: 14px;height: 14px;" src="Ima/loca.png">Arkhangai
+                    </div>
+                </div>
+                <div class="ocean">DAY 3</div>
+                <div class="brown" style="top: 346px;left: 703px;"><img style="width: 245.35px;height: 245px;"
+                        src="Ima/togoo.png">
+                </div>
+            </div>
+            <div style="position: absolute;top: 421px;left: 773px;">
+                <img style="height: 34px;height: 34px;" src="Ima/MapPin 1.png">
+            </div>
+            <div class="orange" style="background-color: rgba(139, 192, 189, 0.8);">
+                <div>
+                    <div class="beige">Terkhiin tsagaan lake</div>
+                    <div class="yellow"><img style="width: 14px;height: 14px;" src="Ima/loca.png">Arkhangai
+                    </div>
+                </div>
+                <div class="ocean">DAY 4</div>
+                <div class="brown" style="top: 175px;left: 674px;"><img style="width: 245.35px;height: 245px;"
+                        src="Ima/terkhiin.png"></div>
+            </div>
+            <div class="orange" style="background-color: rgba(151, 204, 224, 0.8);">
+                <div>
+                    <div class="beige">Khuvsgul lake</div>
+                    <div class="yellow"><img style="width: 14px;height: 14px;" src="Ima/loca.png">Khuvsgul
+                    </div>
+                </div>
+                <div class="ocean">DAY 5</div>
+                <div class="brown" style="top: 187px;left: 821px;"><img style="width: 245.35px;height: 245px;"
+                        src="Ima/khuvsgul.png"></div>
+            </div>
+            <div style="position: absolute;top: 680px;left: 952px;">
+                <img style="width: 34px;height: 34px;" src="Ima/MapPin 1.png">
+            </div>
+        </div>
+    </section>
+    <section style="background-image: url('Ima/b2.png');width: 1440px;height: 1120px;margin: 0 auto;padding-top: 40px;">
+        <div style="text-align: center;">
+            <div
+                style="font-size: 42px;font-weight: 600;font-family: inter;color: rgba(0, 0, 0, 1);padding-bottom: 10px;">
+                Pricing of Our
+                Agency</div>
+            <div style="font-size: 20px;font-weight: 500;font-family: inter;color: rgba(24, 24, 27, 0.7);">Choose a
+                package that's right for you</div>
+        </div>
+        <div style="display: flex;gap: 24px;justify-content: center;padding-top: 79px;">
+            <div class="green">
+                <div class="gold">
+                    <img class="heart" style="height: 36px;width: 36px;" src="Ima/heart.png">
+                    <div style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);">Budget
+                        Package</div>
+                </div>
+                <div style="padding-left: 24px;padding-top: 43px;">
+                    <div
+                        style="font-size: 40px;font-weight: 600;font-family: Montserrat;color: rgba(48, 48, 48, 1);padding-bottom: 10px;">
+                        500$</div>
+                    <div style="font-size: 16px;font-weight: 500;font-family: inter;color: rgba(145, 145, 145, 1);">
+                        Essentials Covered</div>
+                </div>
+                <div style="padding-top: 32px;">
+                    <div
+                        style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);padding-bottom: 16px;padding-left: 64px;">
+                        Includes:</div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">transportation
+                        (shared van/bus)</div>
+                    <div class="silver" style="width: 336px;"><img style="width: 20px;height: 20px;"
+                            src="Ima/check.png">Standard
+                        accommodation (yurt or guesthouse)</div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">Guided lake tour
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">1 meal per day
+                        (breakfast)</div>
+                </div>
+                <div class="metal">
+                    <div class="box">
+                        Select package
+                    </div>
+                </div>
+            </div>
+            <div class="green">
+                <div class="gold">
+                    <img class="heart" style="width: 36px;height: 36px;" src="Ima/heart.png">
+                    <div style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);">
+                        Standard Package</div>
+                </div>
+                <div style="padding-left: 24px;padding-top: 43px;">
+                    <div
+                        style="font-size: 40px;font-weight: 600;font-family: Montserrat;color: rgba(48, 48, 48, 1);padding-bottom: 10px;">
+                        800$</div>
+                    <div
+                        style="font-size: 16px;font-weight: 500;font-family: inter;color: rgba(145, 145, 145, 1);display: flex;justify-content: space-between;align-items: center;padding-right: 24px;">
+                        Balanced Adventure
+                        <div
+                            style="background-color: rgba(105, 114, 181, 1);width: 91px;height: 27px;border-radius: 13.5px;display: flex;justify-content: center;align-items: center;">
+                            <span
+                                style="font-size: 16px;font-weight: 500;font-family: inter;color: rgba(250, 251, 252, 1);">Popular</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top: 32px;">
+                    <div
+                        style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);padding-bottom: 16px;padding-left: 64px;">
+                        Includes:
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">Comfortable
+                        transportation (mini-bus)
+                    </div>
+                    <div class="silver" style="width: 350px;"><img style="width: 20px;height: 20px;"
+                            src="Ima/check.png">Mid-range accommodation (private yurt or lodge)
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">Guided lake tour +
+                        nearby hiking
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">2 meals per day
+                        (breakfast and dinner)
+                    </div>
+                </div>
+                <div class="metal">
+                    <div class="box">
+                        Select package
+                    </div>
+                </div>
+            </div>
+            <div class="green">
+                <div class="gold">
+                    <img class="heart" style="width: 36px;height: 36px;" src="Ima/heart.png">
+                    <div style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);">
+                        Luxury Package</div>
+                </div>
+                <div style="padding-left: 24px;padding-top: 43px;">
+                    <div
+                        style="font-size: 40px;font-weight: 600;font-family: Montserrat;color: rgba(48, 48, 48, 1);padding-bottom: 10px;">
+                        1200$</div>
+                    <div style="font-size: 16px;font-weight: 500;font-family: inter;color: rgba(145, 145, 145, 1);">
+                        Ultimate Comfort</div>
+                </div>
+                <div style="padding-top: 32px;">
+                    <div
+                        style="font-size: 18px;font-weight: 500;font-family: inter;color: rgba(18, 19, 22, 1);padding-bottom: 16px;padding-left: 64px;">
+                        Includes:
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">Private
+                        transportation (SUV)
+                    </div>
+                    <div class="silver" style="width: 340px;"><img style="width: 20px;height: 20px;"
+                            src="Ima/check.png">Luxury accommodation (lakefront lodge)
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">Guided tours (lake +
+                        reindeer herder experience)
+                    </div>
+                    <div class="silver"><img style="width: 20px;height: 20px;" src="Ima/check.png">All meals included
+                        (local cuisine)
+                    </div>
+                </div>
+                <div class="metal">
+                    <div class="box">
+                        Select package
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="display: flex;gap: 741px;justify-content: center;padding-top: 265px;">
+            <div style="display: flex;gap: 20px;">
+                <div class="mont"><img style="width: 24px;height: 24px;" src="Ima/Facebook Icon.png">Facebook</div>
+                <div class="mont"><img style="width: 24px;height: 24px;" src="Ima/Instagram Icon.png">Instagram</div>
+            </div>
+            <img style="width: 101px;height: 35px;" src="Ima/logo 1.png">
+        </footer>
+    </section>
+
+
+
+
+
+
+
+</body>
+
+</html>
